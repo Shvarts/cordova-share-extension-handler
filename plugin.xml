@@ -4,4 +4,12 @@
     <js-module name="ShareExtensionHandler" src="www/ShareExtensionHandler.js">
         <clobbers target="cordova.plugins.ShareExtensionHandler" />
     </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="ShareExtensionHandler">
+                <param name="ios-package" value="ShareExtensionHandler" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/ShareExtensionHandler.m" />
+    </platform>
 </plugin>
