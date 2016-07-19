@@ -1,5 +1,9 @@
 var exec = require('cordova/exec');
 
-exports.coolMethod = function(arg0, success, error) {
-    exec(success, error, "ShareExtensionHandler", "coolMethod", [arg0]);
+exports.loadShareImage = function(success, fail) {
+    exec(success, fail, "ShareExtensionHandler", "loadShareImage");
+};
+
+exports.finishExtension = function() {
+    exec(null, null, "ShareExtensionHandler", "finishExtension");
 };
