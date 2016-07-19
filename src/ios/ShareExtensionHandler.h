@@ -1,3 +1,4 @@
+// Krisz
 #import <Cordova/CDVPlugin.h>
 
 @interface ShareExtensionHelper : CDVPlugin
