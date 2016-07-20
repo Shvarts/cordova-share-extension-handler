@@ -1,9 +1,12 @@
-var exec = require('cordova/exec');
+var ShareExtensionHandler = function() {};
 
-exports.loadShareImage = function(success, fail) {
-    exec(success, fail, "ShareExtensionHandler", "loadShareImage");
+ShareExtensionHandler.prototype.loadShareImage = function(success, fail) {
+  cordova.exec(success, fail, "ShareExtensionHandler", "loadShareImage");
 };
 
-exports.finishExtension = function() {
-    exec(null, null, "ShareExtensionHandler", "finishExtension");
+ShareExtensionHandler.prototype.finishExtension = function() {
+  cordova.exec(null, null, "ShareExtensionHandler", "finishExtension");
 };
+
+var ShareExtensionHandler = new ShareExtensionHandler();
+module.exports = ShareExtensionHandler;

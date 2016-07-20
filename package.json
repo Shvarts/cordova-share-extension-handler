@@ -1,31 +1,22 @@
 {
   "name": "cordova-share-extension-handler",
-  "version": "0.2.1",
-  "description": "This plugin allows you to handle share extension callback",
+  "version": "0.0.1",
+  "description": "Hadler for share extension",
   "cordova": {
-    "id": "ShareExtensionHandler",
-    "platforms": [
-      "ios"
-    ]
+    "id": "cordova-share-extension-handler",
+    "platforms": []
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shvarts/cordova-share-extension-handler.git"
   },
   "keywords": [
-    "ecosystem:cordova",
-    "cordova-ios"
+    "ecosystem:cordova"
   ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.0.0"
-    }
-  ],
-  "author": "PassSlot",
+  "author": "Shvarts",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/Shvarts/cordova-share-extension-handler"
+    "url": "https://github.com/Shvarts/cordova-share-extension-handler/issues"
   },
-  "homepage": "https://github.com/Shvarts/cordova-share-extension-handler"
+  "homepage": "https://github.com/Shvarts/cordova-share-extension-handler#readme"
 }

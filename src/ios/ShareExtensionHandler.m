@@ -1,28 +1,33 @@
 /********* ShareExtensionHandler.m Cordova Plugin Implementation *******/
 
+#import "ShareExtensionHandler.h"
+#import "ShareViewController.h"
 #import <Cordova/CDV.h>
-
-@interface ShareExtensionHandler : CDVPlugin {
-  // Member variables go here.
-}
-
-- (void)coolMethod:(CDVInvokedUrlCommand*)command;
-@end
+#import <Cordova/CDVPluginResult.h>
 
 @implementation ShareExtensionHandler
 
-- (void)coolMethod:(CDVInvokedUrlCommand*)command
-{
-    CDVPluginResult* pluginResult = nil;
-    NSString* echo = [command.arguments objectAtIndex:0];
+- (void)loadShareImage:(CDVInvokedUrlCommand *)command {
+  // do the magic
+  ShareViewController *shareView = self.viewController;
+  NSURL *urlResult = shareView.imageExtensionUrl;
+  
+  // give the callback
+  CDVPluginResult *result = nil;
+  if (urlResult != nil) {
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                               messageAsString:[urlResult absoluteString]];
+  } else {
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_IO_EXCEPTION];
+  }
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+}
 
-    if (echo != nil && [echo length] > 0) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
-    } else {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    }
-
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+- (void)finishExtension:(CDVInvokedUrlCommand *)command {
+  // Do the magic
+  ShareViewController *shareView = self.viewController;
+  [shareView.extensionContext completeRequestReturningItems:nil
+                                          completionHandler:nil];
 }
 
 @end
