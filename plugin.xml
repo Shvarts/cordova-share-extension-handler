@@ -1,2 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-share-extension-handler" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android"><name>ShareExtensionHandler</name><js-module name="ShareExtensionHandler" src="www/ShareExtensionHandler.js"><clobbers target="cordova.plugins.ShareExtensionHandler" /></js-module><platform name="ios"><config-file parent="/*" target="config.xml"><feature name="ShareExtensionHandler"><param name="ios-package" value="ShareExtensionHandler" /></feature></config-file><source-file src="src/ios/ShareExtensionHandler.m" /></platform></plugin>
+<plugin id="cordova-share-extension-handler" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>ShareExtensionHandler</name>
+    <js-module name="ShareExtensionHandler" src="www/ShareExtensionHandler.js">
+        <clobbers target="cordova.plugins.ShareExtensionHandler" />
+    </js-module>
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="ShareExtensionHandler">
+                <param name="ios-package" value="ShareExtensionHandler" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/ShareExtensionHandler.h" />
+        <source-file src="src/ios/ShareExtensionHandler.m" />
+    </platform>
+</plugin>
