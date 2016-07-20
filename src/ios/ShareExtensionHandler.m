@@ -1,5 +1,3 @@
-/********* ShareExtensionHandler.m Cordova Plugin Implementation *******/
-
 #import "ShareExtensionHandler.h"
 #import "ShareViewController.h"
 #import <Cordova/CDV.h>
