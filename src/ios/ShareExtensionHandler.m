@@ -1,5 +1,5 @@
 #import "ShareExtensionHandler.h"
-#import "ShareViewController.h"
+// #import "ShareViewController.h"
 #import <Cordova/CDV.h>
 #import <Cordova/CDVPluginResult.h>
 

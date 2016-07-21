@@ -4,6 +4,8 @@
   // Member variables go here.
 	
   - (void)loadShareImage:(CDVInvokedUrlCommand *)command;
+  @end
 
   - (void)finishExtension:(CDVInvokedUrlCommand *)command;
+  @end
 }
