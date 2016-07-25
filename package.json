@@ -1,6 +1,6 @@
 {
   "name": "cordova-share-extension-handler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hadler for share extension",
   "cordova": {
     "id": "cordova-share-extension-handler",

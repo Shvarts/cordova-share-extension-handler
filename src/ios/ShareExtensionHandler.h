@@ -1,11 +1,9 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface ShareExtensionHandler : CDVPlugin {
+@interface ShareExtensionHandler : CDVPlugin
   // Member variables go here.
-	
-  - (void)loadShareImage:(CDVInvokedUrlCommand *)command;
-  @end
+- (void)getJsonDataFromSharedPkpassFile:(CDVInvokedUrlCommand *)command;
 
-  - (void)finishExtension:(CDVInvokedUrlCommand *)command;
-  @end
-}
+- (void)deletePkpass:(CDVInvokedUrlCommand *)command;
+
+@end
