@@ -17,14 +17,8 @@
 
 
 - (BOOL)isContentValid {
-    // Do validation of contentText and/or NSExtensionContext attachments here
     return YES;
 }
-
-
-
-
-
 
 - (void)didSelectPost {
   NSUserDefaults *userdata = [[NSUserDefaults alloc] initWithSuiteName:@"group.intime"];
@@ -35,21 +29,17 @@
   //Get pkpass NSData object through NSItemProvider
   //Store results in NSUserDefaults bridge
   [itemProvider loadItemForTypeIdentifier:@"com.apple.pkpass" options:nil completionHandler:^(id<NSSecureCoding>  _Nullable item, NSError * _Null_unspecified error) {
-    PKPass* obj = [[PKPass alloc] initWithData:item error:&error];
+   PKPass* obj = [[PKPass alloc] initWithData:item error:&error];
     
    
-//
     [userdata setObject:[[obj passURL] absoluteString] forKey:@"pkpassFile"];
-//    
     [userdata setObject:item forKey:@"pkpassDataFile"];
-    
   }];
   
   [self.extensionContext completeRequestReturningItems:@[] completionHandler:nil];
 }
 
 - (NSArray *)configurationItems {
-    // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
     return @[];
 }
 
