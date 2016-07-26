@@ -1,12 +1,18 @@
-var ShareExtensionHandler = function() {};
-
-ShareExtensionHandler.prototype.getJsonDataFromSharedPkpassFile = function(success, fail) {
-  cordova.exec(success, fail, "ShareExtensionHandler", "getJsonDataFromSharedPkpassFile");
-};
-
-ShareExtensionHandler.prototype.deletePkpass = function() {
-  cordova.exec(null, null, "ShareExtensionHandler", "deletePkpass");
-};
-
-var ShareExtensionHandler = new ShareExtensionHandler();
-module.exports = ShareExtensionHandler;
+cordova.define("cordova-share-extension-handler.ShareExtensionHandler", function(require, exports, module) {
+   module.exports = {
+	   getJsonDataFromSharedPkpassFile: function(params, successCallback) {
+		   cordova.exec(successCallback,
+		                null,
+		                "ShareExtensionHandler",
+		                "getJsonDataFromSharedPkpassFile",
+		                [params]);
+	   },
+	   deletePkpass: function(params, successCallback) {
+		   cordova.exec(successCallback,
+		                null,
+		                "ShareExtensionHandler",
+		                "deletePkpass",
+		                [params]);
+	   }
+   };
+});

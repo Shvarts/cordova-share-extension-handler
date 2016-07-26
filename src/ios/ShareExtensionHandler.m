@@ -12,6 +12,8 @@
     [result setObject:value forKey:key];
   }
   
+  [result setObject:[[obj passURL] absoluteString] forKey:@ "url"];
+  
   return result;
 }
 
@@ -23,21 +25,21 @@
   NSArray *keyIdentifiers = [command.arguments objectAtIndex:0];
   
   NSString *jsonString = @"";
+  CDVPluginResult* result;
   
   if ([userdata objectForKey:@"pkpassDataFile"] != nil) {
     NSError *error = nil;
     PKPass *obj = [[PKPass alloc] initWithData:[userdata dataForKey:@"pkpassDataFile"] error:&error];
     NSMutableDictionary *dic = [self getDictionaryPkpassItems:obj withKeyArray:keyIdentifiers];
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic
-                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                       options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     
     jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
-    
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary: dic];
   }
   
-  [self.commandDelegate sendPluginResult:jsonString callbackId:command.callbackId];
+  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
 - (void)deletePkpass:(CDVInvokedUrlCommand *)command {
