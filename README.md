@@ -8,9 +8,9 @@ add to project:
 1) Add share extension to your xcode project
 [Apple developer guide for share extension](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionCreation.html#//apple_ref/doc/uid/TP40014214-CH5-SW1)
 
-2) Replace ShareViewController.h, ShareViewController.m and Info.plist 
+2) Replace *ShareViewController.h*, *ShareViewController.m* and Info.plist 
 
-with shareExtension/ShareViewController.h, ShareViewController.m and Info.plist from this repo
+with **shareExtension/** *ShareViewController.h*, *ShareViewController.m* and *Info.plist* from this repo
 
 From js part: 
 
