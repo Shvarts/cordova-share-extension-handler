@@ -10,7 +10,7 @@ add to project:
 
 2) Replace *ShareViewController.h*, *ShareViewController.m* and Info.plist 
 
-with **shareExtension/** *ShareViewController.h*, *ShareViewController.m* and *Info.plist* from this repo
+with **shareTarget/** *ShareViewController.h*, *ShareViewController.m* and *Info.plist* from this repo
 
 From js part: 
 
