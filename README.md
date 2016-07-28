@@ -11,10 +11,11 @@ https://developer.apple.com/library/ios/documentation/General/Conceptual/Extensi
 2) Replace ShareViewController.h, ShareViewController.m and Info.plist with shareExtension/ShareViewController.h, ShareViewController.m and Info.plist from this repo
 
 From js part: 
+
 1) window.cordova.plugins.ShareExtensionHandler.getJsonDataFromSharedPkpassFile
 Method for getting pkpass file data by keys.
 Example: 
-
+```js
       window.cordova.plugins.ShareExtensionHandler.getJsonDataFromSharedPkpassFile(['message', 'pass'], 
         function(result) {
           // success callback
@@ -23,7 +24,9 @@ Example:
           // fail callback
         });
       )
+```
 
 2) delete pkpass from buffer
-
+```js
       window.cordova.plugins.ShareExtensionHandler.deletePkpass();
+```
